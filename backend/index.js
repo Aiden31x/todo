@@ -5,10 +5,12 @@ const { todo } = require("./db");
 const { createTodo, updateTodo } = require("./types");
 
 
+const cors = require("cors");
 const express = require("express");
 const app = express();
 
 app.use(express.json()); //allows to parse a json body
+app.use(cors());
 
 app.post("/todo", async function (req, res) {
 
